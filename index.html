@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baitap</title>
+    <link rel="stylesheet" href="btc.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="pic/logo3.png" alt="Logo Phone Shop">
+            </div>
+            <h1>CLOUDTECH</h1>
+        </div>
+
+        <div class="header-info">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <button onclick="searchProducts()">Tìm kiếm</button>
+            </div>
+
+            <div class="info-container">
+                <div class="info-item">
+                    📞 <span>Gọi mua hàng <br> 0358497630</span>
+                </div>
+                <div class="info-item">
+                    📍 <span>Cửa hàng <br> gần bạn</span>
+                </div>
+                <div class="info-item">
+                    🚚 <span>Tra cứu <br> đơn hàng</span>
+                </div>
+            </div>
+
+            <div class="cart">
+                🛒 <span id="cart-count">Đơn hàng</span>
+            </div>
+        </div>
+
+        <div class="theme-toggle">
+            <button id="toggleTheme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner-container">
+        <img src="pic/thang_04_pc_banner_web_collection_1920x420.jpg" alt="Banner Khuyến mãi lớn">
+    </div>
+
+    <!-- Sidebar + Main -->
+    <div class="content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Danh Mục</h3>
+            <ul>
+                <li><a href="#" onclick="filterCategory('dien-thoai')">📱 Điện thoại, Tablet</a></li>
+                <li><a href="#" onclick="filterCategory('laptop')">💻 Laptop</a></li>
+                <li><a href="#" onclick="filterCategory('am-thanh')">🎧 Âm thanh</a></li>
+                <li><a href="#" onclick="filterCategory('dong-ho-camera')">⌚ Đồng hồ, Camera</a></li>
+                <li><a href="#" onclick="filterCategory('do-gia-dung')">🏠 Đồ gia dụng</a></li>
+                <li><a href="#" onclick="filterCategory('phu-kien')">🔌 Phụ kiện</a></li>
+                <li><a href="#" onclick="filterCategory('pc-man-hinh')">🖥️ PC, Màn hình, Máy in</a></li>
+                <li><a href="#" onclick="filterCategory('tv')">📺 Tivi</a></li>
+                <li><a href="#" onclick="filterCategory('thu-doi')">🔄 Thu cũ đổi mới</a></li>
+                <li><a href="#" onclick="filterCategory('hang-cu')">📱 Hàng cũ</a></li>
+                <li><a href="#" onclick="filterCategory('khuyen-mai')">🎉 Khuyến mãi</a></li>
+                <li><a href="#" onclick="filterCategory('tin-cong-nghe')">📰 Tin công nghệ</a></li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <main>
+            <!-- Điện thoại -->
+            <div class="product" data-name="Iphone 15 Pro Max" data-price="29990000" data-category="dien-thoai">
+                <img src="pic/ip15.jpeg" alt="Iphone 15 Pro Max 256GB">
+                <h2>IPhone 15 Pro Max 256GB</h2>
+                <p>Giá: 29.990.000 đ</p>
+                <a href="detail.html?product=iphone15" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Google Pixel 9 Pro" data-price="24950000" data-category="dien-thoai">
+                <img src="pic/ggpx.jpg" alt="Google Pixel 9 Pro">
+                <h2>Google Pixel 9 Pro</h2>
+                <p>Giá: 24.950.000 đ</p>
+                <a href="detail.html?product=googlepixel" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Rog Phone 9 Pro" data-price="27950000" data-category="dien-thoai">
+                <img src="pic/rog9.png" alt="Rog Phone 9 Pro">
+                <h2>Rog Phone 9 Pro</h2>
+                <p>Giá: 27.950.000 đ</p>
+                <a href="detail.html?product=rogphone9pro" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Samsung Galaxy S24 Ultra" data-price="22950000" data-category="dien-thoai">
+                <img src="pic/ss.jpg" alt="Samsung Galaxy S24 Ultra">
+                <h2>Samsung Galaxy S24 Ultra</h2>
+                <p>Giá: 22.950.000 đ</p>
+                <a href="detail.html?product=samsunggalaxys24ultra" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Xiaomi 15 Ultra 5G" data-price="31990000" data-category="dien-thoai">
+                <img src="pic/xiao.jpg" alt="Xiaomi 15 Ultra 5G">
+                <h2>Xiaomi 15 Ultra 5G</h2>
+                <p>Giá: 31.990.000 đ</p>
+                <a href="detail.html?product=xiaomi15ultra5g" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Huawei Pura 70 Ultra" data-price="34999000" data-category="dien-thoai">
+                <img src="pic/huawei.jpg" alt="Huawei Pura 70 Ultra">
+                <h2>Huawei Pura 70 Ultra</h2>
+                <p>Giá: 34.999.000 đ</p>
+                <a href="detail.html?product=huaweipura70ultra" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Nubia Red Magic 9S Pro Plus" data-price="20250000"
+                data-category="dien-thoai">
+                <img src="pic/nubia.webp" alt="Nubia Red Magic 9S Pro Plus">
+                <h2>Nubia Red Magic 9S Pro Plus</h2>
+                <p>Giá: 20.250.000 đ</p>
+                <a href="detail.html?product=nubiaredmagic9sproplus" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Samsung Galaxy Z Fold 6" data-price="35090000" data-category="dien-thoai">
+                <img src="pic/zfold.webp" alt="Samsung Galaxy Z Fold 6">
+                <h2>Samsung Galaxy Z Fold 6</h2>
+                <p>Giá: 35.090.000 đ</p>
+                <a href="detail.html?product=samsunggalaxyzfold6" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <!-- Laptop -->
+            <div class="product" data-name="Laptop ASUS ROG Strix SCAR 18 G835LX SA208W" data-price="124990000"
+                data-category="laptop">
+                <img src="pic/scar18.png" alt="Laptop ASUS ROG Strix SCAR 18 G835LX SA208W">
+                <h2>Laptop ASUS ROG Strix SCAR 18 G835LX SA208W</h2>
+                <p>Giá: 124.990.000 đ</p>
+                <a href="detail.html?product=asusrogscar18" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Laptop ASUS ROG Flow Z13 GZ302EA RU145WS" data-price="79990000"
+                data-category="laptop">
+                <img src="pic/rogflowz13_1.png" alt="Laptop ASUS ROG Flow Z13 GZ302EA RU145WS">
+                <h2>Laptop ASUS ROG Flow Z13 GZ302EA RU145WS</h2>
+                <p>Giá: 79.990.000 đ</p>
+                <a href="detail.html?product=asusrogflowz13" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Laptop ASUS ROG Zephyrus G16 GU605CX QR147W" data-price="119990000"
+                data-category="laptop">
+                <img src="pic/zephyrusg16_1.png" alt="Laptop ASUS ROG Zephyrus G16 GU605CX QR147W">
+                <h2>Laptop ASUS ROG Zephyrus G16 GU605CX QR147W</h2>
+                <p>Giá: 119.990.000 đ</p>
+                <a href="detail.html?product=asuszephyrusg16" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Laptop Acer Predator Helios PHN16 73 757W" data-price="52990000"
+                data-category="laptop">
+                <img src="pic/predatorhelios_1.png" alt="Laptop Acer Predator Helios PHN16 73 757W">
+                <h2>Laptop Acer Predator Helios PHN16 73 757W</h2>
+                <p>Giá: 52.990.000 đ</p>
+                <a href="detail.html?product=acerpredatorhelios" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+
+            <div class="product" data-name="Laptop Acer Nitro Lite 16 NL16 71G 71UJ" data-price="22490000"
+                data-category="laptop">
+                <img src="pic/nitrolite_1.png" alt="Laptop Acer Nitro Lite 16 NL16 71G 71UJ">
+                <h2>Laptop Acer Nitro Lite 16 NL16 71G 71UJ</h2>
+                <p>Giá: 22.490.000 đ</p>
+                <a href="detail.html?product=acernitrolite16" class="details-button">Chi tiết sản phẩm</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Cột 1: Liên hệ -->
+            <div class="footer-col">
+                <h3>Liên hệ</h3>
+                <p>📍 Hà Nội</p>
+                <p>📞 Hotline: 0358497630</p>
+                <p>✉️ Email: hahunganh0@gmail.com</p>
+            </div>
+
+            <!-- Cột 2: Chính sách -->
+            <div class="footer-col">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="#">Đổi trả hàng</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Thanh toán</a></li>
+                    <li><a href="#">Vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Mạng xã hội -->
+            <div class="footer-col">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#">🌐 Facebook</a><br>
+                    <a href="#">▶️ YouTube</a><br>
+                    <a href="#">📸 Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 CLOUDTECH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                const productName = product.querySelector('h2').innerText.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function filterCategory(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('toggleTheme').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') ? '🌞' : '🌙';
+        });
+
+    </script>
+</body>
+
+</html>

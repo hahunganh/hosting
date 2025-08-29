@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="btc.css">
+  <style>
+    body {
+      background: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header thu gọn */
+    .detail-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .detail-header .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-header img {
+      height: 40px;
+      border-radius: 6px;
+    }
+
+    .detail-header h1 {
+      font-size: 20px;
+    }
+
+    .back-link-header {
+      padding: 8px 14px;
+      background: #ff5722;
+      color: #fff;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .back-link-header:hover {
+      background: #e64a19;
+    }
+
+    /* Box thông báo */
+    .updating {
+      flex: 1;
+      max-width: 700px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 40px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .updating h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+      font-size: 22px;
+    }
+
+    .updating p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background: #111;
+      color: #eee;
+    }
+
+    body.dark-mode .detail-header {
+      background: linear-gradient(135deg, #222, #111);
+      color: #eee;
+    }
+
+    body.dark-mode .updating {
+      background: #222;
+      color: #ddd;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .updating h1 {
+      color: #66b2ff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="detail-header">
+    <div class="logo-container">
+      <img src="pic/logo3.png" alt="Logo">
+      <h1>CLOUDTECH</h1>
+    </div>
+    <a href="bt.html" class="back-link-header">← Quay lại trang chủ</a>
+  </div>
+
+  <!-- Nội dung chính -->
+  <div class="updating" id="updating-box">
+    <!-- JS sẽ thêm nội dung -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <!-- Cột 1: Liên hệ -->
+      <div class="footer-col">
+        <h3>Liên hệ</h3>
+        <p>📍 Hà Nội</p>
+        <p>📞 Hotline: 0358497630</p>
+        <p>✉️ Email: hahunganh0@gmail.com</p>
+      </div>
+
+      <!-- Cột 2: Chính sách -->
+      <div class="footer-col">
+        <h3>Chính sách</h3>
+        <ul>
+          <li><a href="#">Đổi trả hàng</a></li>
+          <li><a href="#">Bảo hành</a></li>
+          <li><a href="#">Thanh toán</a></li>
+          <li><a href="#">Vận chuyển</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Mạng xã hội -->
+      <div class="footer-col">
+        <h3>Kết nối với chúng tôi</h3>
+        <div class="social-links">
+          <a href="#">🌐 Facebook</a><br>
+          <a href="#">▶️ YouTube</a><br>
+          <a href="#">📸 Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 CLOUDTECH. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lấy product từ URL (?product=xxx)
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("product");
+
+    // Danh sách tên sản phẩm
+    const productNames = {
+      iphone15: "iPhone 15 Pro Max 256GB",
+      googlepixel: "Google Pixel 9 Pro",
+      rogphone9pro: "ROG Phone 9 Pro",
+      samsunggalaxys24ultra: "Samsung Galaxy S24 Ultra",
+      xiaomi15ultra5g: "Xiaomi 15 Ultra 5G",
+      huaweipura70ultra: "Huawei Pura 70 Ultra",
+      nubiaredmagic9sproplus: "Nubia Red Magic 9S Pro Plus",
+      samsunggalaxyzfold6: "Samsung Galaxy Z Fold 6",
+      asusrogscar18: "Laptop ASUS ROG Strix SCAR 18",
+      asusrogflowz13: "Laptop ASUS ROG Flow Z13",
+      asuszephyrusg16: "Laptop ASUS ROG Zephyrus G16",
+      acerpredatorhelios: "Laptop Acer Predator Helios",
+      acernitrolite16: "Laptop Acer Nitro Lite 16"
+    };
+
+    const box = document.getElementById("updating-box");
+    if (product && productNames[product]) {
+      box.innerHTML = `
+        <h1>Thông tin sản phẩm <br><strong>${productNames[product]}</strong></h1>
+        <p>Hiện đang được cập nhật, vui lòng quay lại sau...</p>
+      `;
+    } else {
+      box.innerHTML = `
+        <h1>Không tìm thấy sản phẩm</h1>
+        <p>Vui lòng quay lại trang chủ để chọn sản phẩm khác.</p>
+      `;
+    }
+  </script>
+</body>
+
+</html>
